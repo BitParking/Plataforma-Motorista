@@ -8,7 +8,7 @@ jobs:
        steps:
          - run:
              name: Realizando Deploy para o firebaseApp
-             command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+             command: ./node_modules/.bin/firebase deploy --token=FIREBASE_DEPLOY_TOKEN
 
     workflows:
       version: 2
