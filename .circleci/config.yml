@@ -1,17 +1,27 @@
 version: 2
 jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:8.10
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
+  build:    
+     deploy-job:
+       docker:
+         - image: circleci/node:8.10
+       working_directory: /tmp/bitparking-tcc
+       steps:
+         - run:
+             name: Realizando Deploy para o firebaseApp
+             command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
-    working_directory: ~/repo
+    workflows:
+      version: 2
 
+      -deploy:
+        jobs:
+          - build-job
+          - deploy-job:
+              requires:
+                - build-job
+              filters:
+                branches:
+                  only: master
     steps:
       - checkout
 
