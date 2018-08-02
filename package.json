@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.1",
+    "firebase-tools": "^4.0.2",
     "ionic": "4.0.2",
     "typescript": "2.3.4"
   },
