@@ -871,8 +871,8 @@ var MyApp = (function () {
         this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
         this.initializeApp();
         this.appMenuItems = [
-            { title: 'Buscar', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */], icon: 'search' },
-            { title: 'Minhas Reservas222', component: __WEBPACK_IMPORTED_MODULE_7__pages_local_weather_local_weather__["a" /* LocalWeatherPage */], icon: 'clock' }
+            { title: 'Pesquisar', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */], icon: 'search' },
+            { title: 'Minhas Reservas', component: __WEBPACK_IMPORTED_MODULE_7__pages_local_weather_local_weather__["a" /* LocalWeatherPage */], icon: 'clock' }
         ];
     }
     MyApp.prototype.initializeApp = function () {
