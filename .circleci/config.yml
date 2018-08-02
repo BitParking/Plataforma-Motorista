@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  test-job:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+
+      # Cache to enable faster future jobs
+      - run: npm install
