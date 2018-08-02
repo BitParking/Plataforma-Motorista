@@ -6,5 +6,5 @@ install:
 script:
   - echo "Realizando deploy aplicacao no firebase"
 after_success:
-  - firebase use --token $FIREBASE_TOKEN
+  - firebase use --token $FIREBASE_TOKEN bitparking-tcc
   - firebase deploy --project bitparking-tcc --token $FIREBASE_TOKEN
