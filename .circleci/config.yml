@@ -14,10 +14,13 @@ workflows:
 
   -deploy:
     jobs:
-      - "firebase-job"
-          filters:
-            branches:
-              only: master
+      - build-job
+      - deploy-job:
+        requires:
+          - build-job
+        filters:
+          branches:
+            only: master
 steps:
   - checkout
 
