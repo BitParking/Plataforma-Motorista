@@ -1,6 +1,4 @@
-version: 2
-jobs:
-  build:    
+
      deploy-job:
        docker:
          - image: circleci/node:8.10
