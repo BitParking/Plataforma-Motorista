@@ -3,7 +3,10 @@ node_js:
   - "8.10"
 install:
   - npm install -g firebase-tools
+  - npm install -g ionic cordova
+  - npm install
 script:
+  - ionic cordova build browser
   - echo "Realizando deploy aplicacao no firebase"
 after_success:
   - firebase use --token $FIREBASE_TOKEN bitparking-tcc
