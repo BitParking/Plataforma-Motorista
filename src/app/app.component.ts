@@ -36,7 +36,7 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Buscar', component: HomePage, icon: 'search'},
-      {title: 'Minhas Reservas', component: LocalWeatherPage, icon: 'clock'}
+      {title: 'Minhas Reservas222', component: LocalWeatherPage, icon: 'clock'}
     ];
   }
 
