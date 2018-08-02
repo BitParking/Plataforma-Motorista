@@ -3,7 +3,6 @@ node_js:
   - "8.10"
 install:
   - npm install -g firebase-tools
-  - npm install
 script:
   - echo "Realizando deploy aplicacao no firebase"
 after_success:
