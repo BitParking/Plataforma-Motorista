@@ -47,7 +47,7 @@
     "ionic": "4.0.2",
     "typescript": "2.3.4"
   },
-  "description": "Ionic 3 Start Theme",
+  "description": "Bitparking",
   "cordovaPlugins": [],
   "cordovaPlatforms": [],
   "cordova": {

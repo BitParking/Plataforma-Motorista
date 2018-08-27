@@ -55,7 +55,7 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
       autoFocusAssist: false
     }),
     IonicStorageModule.forRoot({
-      name: '__ionic3_start_theme',
+      name: '__Bitparkin',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
