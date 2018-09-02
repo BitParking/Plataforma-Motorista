@@ -24526,6 +24526,10 @@ ion-navbar.toolbar {
   background-color: #4c6df9 !important;
 }
 
+.yellow-bg {
+  background-color: #FFFF00 !important;
+}
+
 .secondary-bg {
   background-color: #5b5ef4 !important;
 }

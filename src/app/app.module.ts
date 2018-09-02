@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {IonicApp, IonicModule} from "ionic-angular";
 import {BrowserModule} from '@angular/platform-browser';
+import { HttpModule } from "@angular/http";
 import {HttpClientModule} from '@angular/common/http';
 import {IonicStorageModule} from '@ionic/storage';
 
@@ -9,7 +10,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
 
 import {ActivityService} from "../services/activity-service";
-import {TripService} from "../services/trip-service";
+import {EstacionamentoService} from "../services/EstacionamentoService";
 import {WeatherProvider} from "../services/weather";
 
 import {MyApp} from "./app.component";
@@ -24,6 +25,7 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+import { EstacionamentoClient } from "../clients/EstacionamentoClient";
 
 // import services
 // end import services
@@ -57,7 +59,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     IonicStorageModule.forRoot({
       name: '__Bitparkin',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
-    })
+    }),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,7 +81,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     SplashScreen,
     Keyboard,
     ActivityService,
-    TripService,
+    EstacionamentoService,
+    EstacionamentoClient,
     WeatherProvider
   ]
 })

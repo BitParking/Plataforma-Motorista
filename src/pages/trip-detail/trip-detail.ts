@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-import {TripService} from "../../services/trip-service";
+import {EstacionamentoService} from "../../services/EstacionamentoService";
 import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
 
 @Component({
@@ -15,9 +15,8 @@ export class TripDetailPage {
   // number of children
   public children = 0;
 
-  constructor(public nav: NavController, public tripService: TripService) {
-    // set sample data
-    this.trip = tripService.getItem(1);
+  constructor(public nav: NavController, public estacionamentoService: EstacionamentoService) {
+    estacionamentoService.getAll()
   }
 
   // minus adult when click minus button
