@@ -8,6 +8,7 @@ import {IonicStorageModule} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
+import {LaunchNavigator} from '@ionic-native/launch-navigator';
 
 import {ActivityService} from "../services/activity-service";
 import {EstacionamentoService} from "../services/EstacionamentoService";
@@ -83,7 +84,8 @@ import { EstacionamentoClient } from "../clients/EstacionamentoClient";
     ActivityService,
     EstacionamentoService,
     EstacionamentoClient,
-    WeatherProvider
+    WeatherProvider,
+    LaunchNavigator
   ]
 })
 

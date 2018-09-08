@@ -1,9 +1,9 @@
 <!-- -->
 <ion-header>
   <ion-navbar color="yellow">
-    <ion-title>
+    <ion-title class=".action-sheet-md .action-sheet-title">
       <img width="25" height="25" src="{{img}}">
-      <span ion-text color="darkness">Estacionamentos</span>
+      <span color="darkness">Estacionamentos</span>
     </ion-title>
   </ion-navbar>
 
@@ -18,7 +18,7 @@
 
 <ion-content padding class="trips detail-bg">
   <!--list of trips-->
-  <div class="trip card" *ngFor="let estacionamento of estacionamentos" tappable (click)="viewDetail(trip.id)" margin-bottom>
+  <div class="trip card" *ngFor="let estacionamento of estacionamentos" tappable (click)="viewDetail()" margin-bottom>
     <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + 'https://www.ultraparkgru.com.br/dicas-de-viagem/wp-content/uploads/2017/03/saiba-escolher-o-estacionamento-certo-para-deixar-seu-carro.jpg' + ')'}">
       <div class="background-filter rlt">
         <div class="align-bottom" padding-left padding-right>
