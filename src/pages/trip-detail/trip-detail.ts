@@ -1,46 +1,40 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
-import {EstacionamentoService} from "../../services/EstacionamentoService";
+import {NavController, NavParams} from "ionic-angular";
 import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
+import { Estacionamento } from "../../models/Estacionamento";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @Component({
   selector: 'page-trip-detail',
   templateUrl: 'trip-detail.html'
 })
 export class TripDetailPage {
-  // trip info
-  public trip: any;
+  public estacionamento:Estacionamento
   // number of adult
-  public adults = 2;
-  // number of children
-  public children = 0;
+  public reservas = 1;
+  public avatarImg = "https://firebasestorage.googleapis.com/v0/b/bitparking-tcc.appspot.com/o/valet.png?alt=media&token=7da6026a-6500-4e9a-bcd2-d9e419c278b7";
 
-  constructor(public nav: NavController, public estacionamentoService: EstacionamentoService) {
-    estacionamentoService.getAll()
+  constructor(public nav: NavController, public navParams: NavParams,private iab: InAppBrowser) {
+    this.estacionamento = navParams.get("estacionamentoSelecionado");
   }
 
   // minus adult when click minus button
-  minusAdult() {
-    this.adults--;
+  diminuiReserva() {
+    this.reservas--;
   }
 
   // plus adult when click plus button
-  plusAdult() {
-    this.adults++;
-  }
-
-  // minus children when click minus button
-  minusChildren() {
-    this.children--;
-  }
-
-  // plus children when click plus button
-  plusChildren() {
-    this.children++;
+  aumentaReserva() {
+    this.reservas++;
   }
 
   // go to checkout page
-  checkout() {
-    this.nav.push(CheckoutTripPage);
+  checkinReserva() {
+    const enderecoDestino = this.estacionamento.getEndereco();
+    const cidadeDestino = this.estacionamento.getCidade();
+    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&origin=-30.035132,-51.226612&destination='+enderecoDestino+','+cidadeDestino+',Brasil&travelmode=driving','_self');
+    browser.show();
+    //this.nav.push(CheckoutTripPage);
   }
 }

@@ -10,7 +10,7 @@
   <!--  -->
   <ion-toolbar padding color="primary">
     <p ion-text no-margin class="text-white">
-      <strong>{{qtdItensEncontrados}}</strong> estacionamentos próximos!
+      <strong>{{qtdItensEncontrados}}</strong> estacionamentos encontrados!
     </p>
   </ion-toolbar>
 
@@ -18,7 +18,7 @@
 
 <ion-content padding class="trips detail-bg">
   <!--list of trips-->
-  <div class="trip card" *ngFor="let estacionamento of estacionamentos" tappable (click)="viewDetail()" margin-bottom>
+  <div class="trip card" *ngFor="let estacionamento of estacionamentos" tappable (click)="viewDetail(estacionamento)" margin-bottom>
     <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + 'https://www.ultraparkgru.com.br/dicas-de-viagem/wp-content/uploads/2017/03/saiba-escolher-o-estacionamento-certo-para-deixar-seu-carro.jpg' + ')'}">
       <div class="background-filter rlt">
         <div class="align-bottom" padding-left padding-right>

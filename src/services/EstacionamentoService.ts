@@ -23,7 +23,8 @@ export class EstacionamentoService {
   private builderEstacionamento(documento:any):Estacionamento{
     return new Estacionamento(documento.name,documento.fields.nome.stringValue,documento.fields.cnpj.stringValue,
       documento.fields.telefone.stringValue,documento.fields.endereco.stringValue,documento.fields.bairro.stringValue,
-      documento.fields.cidade.stringValue,documento.fields.estado.stringValue,documento.fields.horario.stringValue,documento.fields.diasAtendimento.stringValue);
+      documento.fields.cidade.stringValue,documento.fields.estado.stringValue,documento.fields.horario.stringValue,
+      documento.fields.diasAtendimento.stringValue,documento.fields.qtdVagas.integerValue);
   }
 
   getItem(id) {

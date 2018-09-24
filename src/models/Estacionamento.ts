@@ -10,7 +10,8 @@ export class Estacionamento {
     private cidade: string,
     private estado: string,
     private horario: string,
-    private diasAtendimento: string
+    private diasAtendimento: string,
+    private qtdVagas:number
   ) {}
 
   public getPath(): string {
@@ -87,5 +88,13 @@ export class Estacionamento {
 
   public setDiasAtendimento(diasAtendimento: string) {
     this.diasAtendimento = diasAtendimento;
+  }
+
+  public getqtdVagas(): number {
+    return this.qtdVagas;
+  }
+
+  public setqtdVagas(qtdVagas: number) {
+    this.qtdVagas = qtdVagas;
   }
 }
