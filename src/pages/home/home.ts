@@ -4,7 +4,7 @@ import {Storage} from '@ionic/storage';
 
 import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
-import {TripsPage} from "../trips/trips";
+import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import {SearchLocationPage} from "../search-location/search-location";
 
 
@@ -39,7 +39,7 @@ export class HomePage {
 
   // go to result page
   doSearch() {
-    this.nav.push(TripsPage);
+    this.nav.push(PesquisaEstacionamento);
   }
 
   // choose place

@@ -5,7 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 
-import { HomePage } from "../pages/home/home";
+import { PesquisaEstacionamento } from "../pages/pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
@@ -35,8 +35,8 @@ export class MyApp {
     this.initializeApp();
 
     this.appMenuItems = [
-      {title: 'Pesquisar', component: HomePage, icon: 'search'},
-      {title: 'Minhas Reservas', component: LocalWeatherPage, icon: 'clock'}
+      {title: 'Pesquisar', component: PesquisaEstacionamento, icon: 'search'},
+      {title: 'Minhas Reservas', component: PesquisaEstacionamento, icon: 'clock'}
     ];
   }
 

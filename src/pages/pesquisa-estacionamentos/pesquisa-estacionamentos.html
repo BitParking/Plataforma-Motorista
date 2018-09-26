@@ -1,20 +1,19 @@
-<!-- -->
 <ion-header>
   <ion-navbar color="yellow">
-    <ion-title class=".action-sheet-md .action-sheet-title">
-      <img width="25" height="25" src="{{img}}">
-      <span color="darkness">Estacionamentos</span>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong >BitParking</strong>
     </ion-title>
   </ion-navbar>
-
-  <!--  -->
   <ion-toolbar padding color="primary">
     <p ion-text no-margin class="text-white">
       <strong>{{qtdItensEncontrados}}</strong> estacionamentos encontrados!
     </p>
   </ion-toolbar>
-
 </ion-header>
+
 
 <ion-content padding class="trips detail-bg">
   <!--list of trips-->

@@ -24,10 +24,10 @@ import {LoginPage} from "../pages/login/login";
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {RegisterPage} from "../pages/register/register";
 import {SearchLocationPage} from "../pages/search-location/search-location";
-import {TripDetailPage} from "../pages/trip-detail/trip-detail";
-import {TripsPage} from "../pages/trips/trips";
+import {EstacionamentoDetailPage} from "../pages/estacionamento-detail/estacionamento-detail";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { EstacionamentoClient } from "../clients/EstacionamentoClient";
+import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesquisa-estacionamentos';
 
 // import services
 // end import services
@@ -47,8 +47,8 @@ import { EstacionamentoClient } from "../clients/EstacionamentoClient";
     NotificationsPage,
     RegisterPage,
     SearchLocationPage,
-    TripDetailPage,
-    TripsPage
+    EstacionamentoDetailPage,
+    PesquisaEstacionamento
   ],
   imports: [
     BrowserModule,
@@ -75,8 +75,8 @@ import { EstacionamentoClient } from "../clients/EstacionamentoClient";
     NotificationsPage,
     RegisterPage,
     SearchLocationPage,
-    TripDetailPage,
-    TripsPage
+    EstacionamentoDetailPage,
+    PesquisaEstacionamento
   ],
   providers: [
     StatusBar,

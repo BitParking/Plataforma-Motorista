@@ -7,9 +7,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-trip-detail',
-  templateUrl: 'trip-detail.html'
+  templateUrl: 'estacionamento-detail.html'
 })
-export class TripDetailPage {
+export class EstacionamentoDetailPage {
   public estacionamento:Estacionamento
   // number of adult
   public reservas = 1;
