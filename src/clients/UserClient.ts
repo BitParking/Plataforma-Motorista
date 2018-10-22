@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { User } from '../models/User';
-import { process } from '../../env';
 
 @Injectable()
 export class UserClient {
@@ -10,13 +9,11 @@ export class UserClient {
   private KEY_APP:string;
 
   constructor(public http: Http) {
-    console.log(process)
-    this.KEY_APP = process.env.KEY_APP;
    }
 
   insert(newUser: User) {
     return new Promise((resolve, reject) => {
-      let url = this.BASE_URL + "signupNewUser?key="+this.KEY_APP;
+      let url = this.BASE_URL + `signupNewUser?key=$KEY_APP`;
 
       let user = {
         "email": newUser.getEmail(),
@@ -36,7 +33,7 @@ export class UserClient {
 
   refreshToken(refreshToken:string){
     return new Promise((resolve, reject) => {
-      let url = "https://securetoken.googleapis.com/v1/token?key="+this.KEY_APP;
+      let url = `https://securetoken.googleapis.com/v1/token?key=$KEY_APP`;
 
       let requestRefreshToken = {
           "grant_type":"refresh_token",
@@ -55,7 +52,7 @@ export class UserClient {
 
   login(userAuth:User){
     return new Promise((resolve, reject) => {
-      let url = this.BASE_URL + "verifyPassword?key="+this.KEY_APP;
+      let url = this.BASE_URL + `verifyPassword?key=$KEY_APP`;
 
       let user = {
         "email": userAuth.getEmail(),
