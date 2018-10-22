@@ -52,6 +52,7 @@ export class UserClient {
 
   login(userAuth:User){
     return new Promise((resolve, reject) => {
+      console.log(`teste key:$KEY_APP`);
       let url = this.BASE_URL + `verifyPassword?key=$KEY_APP`;
 
       let user = {
