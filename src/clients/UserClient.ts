@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { User } from '../models/User';
-import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
-import 'firebase-functions';
-admin.initializeApp();
 
 @Injectable()
 export class UserClient {
@@ -56,7 +52,7 @@ export class UserClient {
 
   login(userAuth:User){
     return new Promise((resolve, reject) => {
-      console.log(`teste key:${functions.config().someservice.key}`);
+      //console.log(`teste key:${functions.config().someservice.key}`);
       let url = this.BASE_URL + `verifyPassword?key=$KEY_APP`;
 
       let user = {
