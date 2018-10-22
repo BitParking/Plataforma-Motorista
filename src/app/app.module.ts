@@ -28,6 +28,10 @@ import {EstacionamentoDetailPage} from "../pages/estacionamento-detail/estaciona
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { EstacionamentoClient } from "../clients/EstacionamentoClient";
 import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesquisa-estacionamentos';
+import { BrMaskerModule } from 'brmasker-ionic-3';
+import { UserClient } from "../clients/UserClient";
+import { UserService } from "../services/UserService";
+import { MotoristaClient } from '../clients/MotoristaClient';
 
 // import services
 // end import services
@@ -62,7 +66,8 @@ import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesqui
       name: '__Bitparkin',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
     }),
-    HttpModule
+    HttpModule,
+    BrMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -85,6 +90,9 @@ import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesqui
     ActivityService,
     EstacionamentoService,
     EstacionamentoClient,
+    UserClient,
+    UserService,
+    MotoristaClient,
     WeatherProvider,
     LaunchNavigator,
     InAppBrowser

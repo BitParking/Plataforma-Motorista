@@ -11,9 +11,9 @@ export class EstacionamentoService {
     this.estacionamentos = new Array<Estacionamento>();
   }
 
-  public getAll() {
+  public getAll(token:string) {
     this.estacionamentos = [];
-    return this.estacionamentoClient.getAll().then((documentoEstacionamentos:Array<Estacionamento>) =>{
+    return this.estacionamentoClient.getAll(token).then((documentoEstacionamentos:Array<Estacionamento>) =>{
       documentoEstacionamentos.forEach(documento => {
         this.estacionamentos.push(this.builderEstacionamento(documento));
       });

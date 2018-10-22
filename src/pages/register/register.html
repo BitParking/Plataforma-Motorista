@@ -5,24 +5,49 @@
     <!-- Logo -->
     <div padding text-center>
       <div class="logo"></div>
-      <h2 ion-text class="text-primary">
-        <strong>BitParking</strong>
-      </h2>
+      <ion-title>
+        <strong >BitParking</strong>
+      </ion-title>
     </div>
 
     <!-- Login form -->
     <form class="list-form">
       <ion-item>
+
         <ion-label floating>
-          <ion-icon name="person" item-start class="text-primary"></ion-icon>
-          Full Name
+          <ion-icon name="person" item-start class="text-white"></ion-icon>
+          Nome
         </ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" ></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>
-          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          <ion-icon name="ios-card-outline" item-start class="text-white"></ion-icon>
+          CPF
+        </ion-label>
+        <ion-input type="text" name="cpf" [brmasker]="{mask:'000.000.000-00',type:'num', len:14, userCaracters: true}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="car" item-start class="text-white"></ion-icon>
+          CNH
+        </ion-label>
+        <ion-input type="text" name="cnh" [brmasker]="{type:'num', len:11}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>
+            <ion-icon name="ios-phone-portrait" item-start class="text-white"></ion-icon>
+            Celular
+          </ion-label>
+          <ion-input type="text" name="tel" [brmasker]="{mask:'(00)00000-0000',type:'num', len:14}"></ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-white"></ion-icon>
           Email
         </ion-label>
         <ion-input type="email"></ion-input>
@@ -30,8 +55,8 @@
 
       <ion-item>
         <ion-label floating>
-          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
-          Password
+          <ion-icon name="lock" item-start class="text-white"></ion-icon>
+          Senha
         </ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
@@ -39,35 +64,13 @@
 
     <div margin-top>
       <button ion-button block color="dark" tappable (click)="register()">
-        SIGN UP
+        CADASTRAR
       </button>
-
-      <p text-center ion-text color="secondary">Or Sign Up with:</p>
-
-      <ion-grid>
-        <ion-row>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-facebook">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-twitter">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-gplus">
-              <ion-icon name="logo-googleplus"></ion-icon>
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+   </div>
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+      <span ion-text class="text-white" tappable (click)="login()"><strong>Já possuo conta</strong></span>
     </div>
 
   </div>

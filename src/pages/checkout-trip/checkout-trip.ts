@@ -18,7 +18,7 @@ export class CheckoutTripPage {
   public paymethods = 'creditcard';
 
   constructor(public nav: NavController, public estacionamentoService: EstacionamentoService, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
-    estacionamentoService.getAll();
+    estacionamentoService.getAll("");
   }
 
   // process send button

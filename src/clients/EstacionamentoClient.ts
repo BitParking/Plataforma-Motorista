@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Estacionamento } from '../models/Estacionamento';
 import 'rxjs/add/operator/map';
 
@@ -10,12 +10,13 @@ export class EstacionamentoClient {
 
   constructor(public http: Http) { }
 
-  getAll() {
+  getAll(token:string) {
     return new Promise((resolve, reject) => {
-
       let url = this.BASE_URL + 'projects/bitparking-tcc/databases/(default)/documents/estacionamentos';
-
-      this.http.get(url)
+      let header =  new Headers()
+      header.append('Authorization', `Bearer ${token}`)
+          
+      this.http.get(url,{headers:header})
         .map(res => res.json())
         .subscribe(data => {
           this.documentoEstacionamentos = data.documents
