@@ -37,6 +37,10 @@ export class UserService {
     });
   }
 
+  public sendResetPassword(email:string){
+    return this.userClient.sendResetPassword(email);
+  }
+
   private validateRefreshToken(response:any): string {
     if(response.error != null && response.error.code == 400){
       throw new Error("RefreshToken invalido!");

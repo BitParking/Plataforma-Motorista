@@ -4,6 +4,7 @@ import {EstacionamentoService} from "../../services/EstacionamentoService";
 import {EstacionamentoDetailPage} from "../estacionamento-detail/estacionamento-detail";
 import { Estacionamento } from "../../models/Estacionamento";
 import { User } from "../../models/User";
+import { UserService } from '../../services/UserService';
 
 
 @Component({
@@ -16,14 +17,17 @@ export class PesquisaEstacionamento {
   public qtdItensEncontrados:number;
   public img:string = "https://firebasestorage.googleapis.com/v0/b/bitparking-tcc.appspot.com/o/logotipo.png?alt=media&token=ffd2e1ed-deca-41ad-9c1e-85a967e6e1a1";
 
-  constructor(public nav: NavController, public estacionamentoService: EstacionamentoService, public navParams: NavParams) {
+  constructor(public nav: NavController, public estacionamentoService: EstacionamentoService,
+              public navParams: NavParams, public userService:UserService) {
     this.userLogado = navParams.get("userLogado");
     this.qtdItensEncontrados = 0;
     this.estacionamentos = [];
     estacionamentoService.getAll(this.userLogado.getToken()).then(estacionamentos => {
       this.estacionamentos = estacionamentos;
-      console.log(this.estacionamentos);
       this.qtdItensEncontrados = this.estacionamentos.length;
+      this.userService.tokenRenovator(this.userLogado.getRefreshToken()).then(newToken => {
+        this.userLogado.setToken(newToken);
+      })
     });
   }
   

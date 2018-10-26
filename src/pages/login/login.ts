@@ -58,16 +58,17 @@ export class LoginPage {
         {
           text: 'Enviar',
           handler: data => {
-            console.log('Send clicked');
-            let toast = this.toastCtrl.create({
-              message: 'Email was sended successfully',
-              duration: 3000,
-              position: 'top',
-              cssClass: 'dark-trans',
-              closeButtonText: 'OK',
-              showCloseButton: true
+            this.userService.sendResetPassword(data.email).then(()=>{
+                let toast = this.toastCtrl.create({
+                  message: 'Email enviado com sucesso!!!',
+                  duration: 3000,
+                  position: 'top',
+                  cssClass: 'dark-trans',
+                  closeButtonText: 'OK',
+                  showCloseButton: true
+                });
+                toast.present();
             });
-            toast.present();
           }
         }
       ]

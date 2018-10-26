@@ -18,7 +18,7 @@
           <ion-icon name="person" item-start class="text-white"></ion-icon>
           Nome
         </ion-label>
-        <ion-input type="text" ></ion-input>
+        <ion-input type="text" name="nome" [(ngModel)]="motorista.nome"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -26,7 +26,7 @@
           <ion-icon name="ios-card-outline" item-start class="text-white"></ion-icon>
           CPF
         </ion-label>
-        <ion-input type="text" name="cpf" [brmasker]="{mask:'000.000.000-00',type:'num', len:14, userCaracters: true}"></ion-input>
+        <ion-input type="text" name="cpf" [(ngModel)]="motorista.cpf" [brmasker]="{mask:'000.000.000-00',type:'num', len:14}"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -34,7 +34,7 @@
           <ion-icon name="car" item-start class="text-white"></ion-icon>
           CNH
         </ion-label>
-        <ion-input type="text" name="cnh" [brmasker]="{type:'num', len:11}"></ion-input>
+        <ion-input type="text" name="cnh" [(ngModel)]="motorista.cnh" [brmasker]="{type:'num', len:11}"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -42,7 +42,7 @@
             <ion-icon name="ios-phone-portrait" item-start class="text-white"></ion-icon>
             Celular
           </ion-label>
-          <ion-input type="text" name="tel" [brmasker]="{mask:'(00)00000-0000',type:'num', len:14}"></ion-input>
+          <ion-input type="text" name="tel" [(ngModel)]="motorista.telefone" [brmasker]="{mask:'(00)00000-0000',type:'num', len:14}"></ion-input>
         </ion-item>
 
       <ion-item>
@@ -50,7 +50,7 @@
           <ion-icon name="mail" item-start class="text-white"></ion-icon>
           Email
         </ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" name="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -58,7 +58,7 @@
           <ion-icon name="lock" item-start class="text-white"></ion-icon>
           Senha
         </ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" name="senha" [(ngModel)]="user.password" ></ion-input>
       </ion-item>
     </form>
 
