@@ -4551,7 +4551,7 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea:-ms-input-placeholder {
+textarea::-ms-input-placeholder {
   padding-left: 2px;
 }
 
@@ -4715,7 +4715,7 @@ ion-input :focus {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -12514,8 +12514,8 @@ input.text-input:-webkit-autofill {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
   -webkit-flex-direction: inherit;
   -ms-flex-direction: inherit;
   flex-direction: inherit;
@@ -12540,8 +12540,8 @@ input.text-input:-webkit-autofill {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
   -webkit-flex-direction: inherit;
   -ms-flex-direction: inherit;
   flex-direction: inherit;
@@ -17296,23 +17296,23 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-container-coverflow .swiper-wrapper,
@@ -25088,54 +25088,6 @@ page-checkout-trip .item.no-border .item-inner [item-end],
   margin: 0;
 }
 
-page-home ion-list,
-.home ion-list {
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-page-home ion-list ion-item,
-page-home ion-list .item:first-child,
-page-home ion-list .item:last-child,
-.home ion-list ion-item,
-.home ion-list .item:first-child,
-.home ion-list .item:last-child {
-  border: none;
-}
-
-page-home ion-list ion-datetime,
-.home ion-list ion-datetime {
-  padding-left: 0;
-}
-
-page-search-location ion-input,
-page-search-location ion-input::-webkit-input-placeholder,
-.search-location ion-input,
-.search-location ion-input::-webkit-input-placeholder {
-  color: #fff;
-}
-
-page-search-location ion-input,
-page-search-location ion-input:-ms-input-placeholder,
-.search-location ion-input,
-.search-location ion-input:-ms-input-placeholder {
-  color: #fff;
-}
-
-page-search-location ion-input,
-page-search-location ion-input::placeholder,
-.search-location ion-input,
-.search-location ion-input::placeholder {
-  color: #fff;
-}
-
-page-account .card,
-.settings .card {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  overflow: hidden;
-}
-
 page-trip-detail ul.highlight,
 .trip-detail ul.highlight {
   padding-left: 0;
@@ -25176,6 +25128,26 @@ page-trip-detail .booking-form .form-bottom .pull-right,
   margin-left: auto;
 }
 
+page-home ion-list,
+.home ion-list {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+page-home ion-list ion-item,
+page-home ion-list .item:first-child,
+page-home ion-list .item:last-child,
+.home ion-list ion-item,
+.home ion-list .item:first-child,
+.home ion-list .item:last-child {
+  border: none;
+}
+
+page-home ion-list ion-datetime,
+.home ion-list ion-datetime {
+  padding-left: 0;
+}
+
 page-trips .card,
 .trips .card {
   border-radius: 1rem;
@@ -25195,8 +25167,8 @@ page-trips .trip .background,
 page-trips .trip .background .background-filter,
 .trips .trip .background .background-filter {
   height: 16rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.65)));
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.65));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
 }
 
 page-trips .trip .background .background-filter .align-bottom,
@@ -25207,4 +25179,32 @@ page-trips .trip .background .background-filter .align-bottom,
 page-trips .trip .background .background-filter .align-bottom h6,
 .trips .trip .background .background-filter .align-bottom h6 {
   margin-top: 0;
+}
+
+page-search-location ion-input,
+page-search-location ion-input::-webkit-input-placeholder,
+.search-location ion-input,
+.search-location ion-input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+page-search-location ion-input,
+page-search-location ion-input::-ms-input-placeholder,
+.search-location ion-input,
+.search-location ion-input::-ms-input-placeholder {
+  color: #fff;
+}
+
+page-search-location ion-input,
+page-search-location ion-input::placeholder,
+.search-location ion-input,
+.search-location ion-input::placeholder {
+  color: #fff;
+}
+
+page-account .card,
+.settings .card {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
