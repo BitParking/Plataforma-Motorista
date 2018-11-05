@@ -15,7 +15,11 @@ export class UserClient {
   insert(newUser: User) {
     return new Promise((resolve, reject) => {
       let url = this.BASE_URL + `signupNewUser?key=${this.KEY_APP}`;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
       let user = {
         "email": newUser.getEmail(),
         "password" : newUser.getPassword(),
@@ -35,7 +39,11 @@ export class UserClient {
   refreshToken(refreshToken:string){
     return new Promise((resolve, reject) => {
       let url = `https://securetoken.googleapis.com/v1/token?key=${this.KEY_APP}`;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
       let requestRefreshToken = {
           "grant_type":"refresh_token",
           "refresh_token": refreshToken
@@ -54,7 +62,11 @@ export class UserClient {
   login(userAuth:User){
     return new Promise((resolve, reject) => {
       let url = this.BASE_URL + `verifyPassword?key=${this.KEY_APP}`;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
       let user = {
         "email": userAuth.getEmail(),
         "password" : userAuth.getPassword(),
@@ -74,12 +86,20 @@ export class UserClient {
   sendResetPassword(email:string){
     return new Promise((resolve, reject) => {
       let url = this.BASE_URL + `getOobConfirmationCode?key=${this.KEY_APP}`;
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
       let resetPassword = {
         "requestType":"PASSWORD_RESET",
         "email": email
       }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
       this.http.post(url, resetPassword)
         .subscribe((result: any) => {
           resolve(result.json());
@@ -89,4 +109,8 @@ export class UserClient {
         });
     });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

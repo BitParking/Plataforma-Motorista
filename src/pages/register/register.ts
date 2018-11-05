@@ -7,7 +7,11 @@ import { User } from '../../models/User';
 import { UserService } from '../../services/UserService';
 import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { MotoristaService } from "../../services/MotoristaService";
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> master
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html'
@@ -15,8 +19,13 @@ import { MotoristaService } from "../../services/MotoristaService";
 export class RegisterPage {
   public motorista:Motorista
   public user:User
+<<<<<<< HEAD
  
  
+=======
+
+
+>>>>>>> master
   constructor(public nav: NavController, public userService:UserService,
               public motoristaService:MotoristaService) {
     this.motorista = new Motorista("",null,"","","",[]);
