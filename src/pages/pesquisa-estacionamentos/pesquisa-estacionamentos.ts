@@ -16,7 +16,11 @@ export class PesquisaEstacionamento {
   public userLogado:User;
   public qtdItensEncontrados:number;
   public img:string = "https://firebasestorage.googleapis.com/v0/b/bitparking-tcc.appspot.com/o/logotipo.png?alt=media&token=ffd2e1ed-deca-41ad-9c1e-85a967e6e1a1";
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> master
   constructor(public nav: NavController, public estacionamentoService: EstacionamentoService,
               public navParams: NavParams, public userService:UserService) {
     this.userLogado = navParams.get("userLogado");

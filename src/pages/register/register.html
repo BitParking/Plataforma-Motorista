@@ -1,7 +1,8 @@
+
 <!-- -->
 <ion-content class="auth-page">
   <div class="login-content">
-
+    
     <!-- Logo -->
     <div padding text-center>
       <div class="logo"></div>
@@ -9,18 +10,18 @@
         <strong >BitParking</strong>
       </ion-title>
     </div>
-
+    
     <!-- Login form -->
     <form class="list-form">
       <ion-item>
-
+        
         <ion-label floating>
           <ion-icon name="person" item-start class="text-white"></ion-icon>
           Nome
         </ion-label>
         <ion-input type="text" name="nome" [(ngModel)]="motorista.nome"></ion-input>
       </ion-item>
-
+      
       <ion-item>
         <ion-label floating>
           <ion-icon name="ios-card-outline" item-start class="text-white"></ion-icon>
@@ -28,7 +29,6 @@
         </ion-label>
         <ion-input type="text" name="cpf" [(ngModel)]="motorista.cpf" [brmasker]="{mask:'000.000.000-00',type:'num', len:14}"></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-label floating>
           <ion-icon name="car" item-start class="text-white"></ion-icon>
@@ -36,8 +36,17 @@
         </ion-label>
         <ion-input type="text" name="cnh" [(ngModel)]="motorista.cnh" [brmasker]="{type:'num', len:11}"></ion-input>
       </ion-item>
-
+      
       <ion-item>
+<<<<<<< HEAD
+        <ion-label floating>
+          <ion-icon name="ios-phone-portrait" item-start class="text-white"></ion-icon>
+          Celular
+        </ion-label>
+        <ion-input type="text" name="tel" [(ngModel)]="motorista.telefone" [brmasker]="{mask:'(00)00000-0000',type:'num', len:14}"></ion-input>
+      </ion-item>
+      
+=======
           <ion-label floating>
             <ion-icon name="ios-phone-portrait" item-start class="text-white"></ion-icon>
             Celular
@@ -45,6 +54,7 @@
           <ion-input type="text" name="tel" [(ngModel)]="motorista.telefone" [brmasker]="{mask:'(00)00000-0000',type:'num', len:14}"></ion-input>
         </ion-item>
 
+>>>>>>> master
       <ion-item>
         <ion-label floating>
           <ion-icon name="mail" item-start class="text-white"></ion-icon>
@@ -52,7 +62,7 @@
         </ion-label>
         <ion-input type="email" name="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
-
+      
       <ion-item>
         <ion-label floating>
           <ion-icon name="lock" item-start class="text-white"></ion-icon>
@@ -61,17 +71,17 @@
         <ion-input type="password" name="senha" [(ngModel)]="user.password" ></ion-input>
       </ion-item>
     </form>
-
+    
     <div margin-top>
       <button ion-button block color="dark" tappable (click)="register()">
         CADASTRAR
       </button>
-   </div>
-
+    </div>
+    
     <!-- Other links -->
     <div text-center margin-top>
       <span ion-text class="text-white" tappable (click)="login()"><strong>Já possuo conta</strong></span>
     </div>
-
+    
   </div>
 </ion-content>

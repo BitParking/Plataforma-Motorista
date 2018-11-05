@@ -32,7 +32,8 @@ import { BrMaskerModule } from 'brmasker-ionic-3';
 import { UserClient } from "../clients/UserClient";
 import { UserService } from "../services/UserService";
 import { MotoristaClient } from '../clients/MotoristaClient';
-import { MotoristaService } from "../services/MotoristaService";
+import { MotoristaService } from "../services/MotoristaService"; 
+
 
 // import services
 // end import services
@@ -94,7 +95,7 @@ import { MotoristaService } from "../services/MotoristaService";
     UserClient,
     UserService,
     MotoristaClient,
-    MotoristaService,
+    MotoristaService, 
     WeatherProvider,
     LaunchNavigator,
     InAppBrowser

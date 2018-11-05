@@ -10,17 +10,17 @@ import { UserService } from "../../services/UserService";
   templateUrl: 'login.html'
 })
 export class LoginPage {
-
+ 
   public userAuth:User;
   public errorMessage:string;
-
+ 
   constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController,
               public toastCtrl: ToastController, public userService:UserService) {
     this.errorMessage = "";
     this.userAuth = new User("","",true,"","","");
     this.menu.swipeEnable(false);
   }
-
+ 
   // go to register page
   register() {
     this.nav.setRoot(RegisterPage);

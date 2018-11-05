@@ -25189,9 +25189,15 @@ page-search-location ion-input::-webkit-input-placeholder,
 }
 
 page-search-location ion-input,
+<<<<<<< HEAD
+page-search-location ion-input:-ms-input-placeholder,
+.search-location ion-input,
+.search-location ion-input:-ms-input-placeholder {
+=======
 page-search-location ion-input::-ms-input-placeholder,
 .search-location ion-input,
 .search-location ion-input::-ms-input-placeholder {
+>>>>>>> master
   color: #fff;
 }
 

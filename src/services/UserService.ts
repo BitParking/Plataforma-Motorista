@@ -2,14 +2,14 @@ import {Injectable} from "@angular/core";
 import { resolve } from "dns";
 import { User } from '../models/User';
 import { UserClient } from "../clients/UserClient";
-
+ 
 @Injectable()
 export class UserService {
   private userEntity:any;
-
+ 
   constructor(public userClient: UserClient) {
   }
-
+ 
   public create(newUser:User) {
     return this.userClient.insert(newUser).then((userEntity) =>{
       return this.buildUser(userEntity);
@@ -18,7 +18,7 @@ export class UserService {
       return this.buildUser(userEntity);
     });
   }
-
+ 
   public login(userAuth:User) {
     return this.userClient.login(userAuth).then((userEntity) =>{
       return this.buildUser(userEntity);
@@ -27,7 +27,7 @@ export class UserService {
       return this.buildUser(userEntity);
     });
   }
-
+ 
   public tokenRenovator(refreshToken:string){
     return this.userClient.refreshToken(refreshToken).then((response) =>{
       return this.validateRefreshToken(response);
