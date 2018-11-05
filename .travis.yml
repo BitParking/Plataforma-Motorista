@@ -11,5 +11,3 @@ script:
 after_success:
   - firebase use --token $FIREBASE_TOKEN bitparking-tcc
   - firebase deploy --project bitparking-tcc --token $FIREBASE_TOKEN
-env:
-  - KEY_APP=AIzaSyACXqDYrCyOgjIu2lqfnvatc8vvK_TXozw

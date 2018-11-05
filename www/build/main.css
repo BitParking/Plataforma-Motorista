@@ -25088,54 +25088,6 @@ page-checkout-trip .item.no-border .item-inner [item-end],
   margin: 0;
 }
 
-page-home ion-list,
-.home ion-list {
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-page-home ion-list ion-item,
-page-home ion-list .item:first-child,
-page-home ion-list .item:last-child,
-.home ion-list ion-item,
-.home ion-list .item:first-child,
-.home ion-list .item:last-child {
-  border: none;
-}
-
-page-home ion-list ion-datetime,
-.home ion-list ion-datetime {
-  padding-left: 0;
-}
-
-page-search-location ion-input,
-page-search-location ion-input::-webkit-input-placeholder,
-.search-location ion-input,
-.search-location ion-input::-webkit-input-placeholder {
-  color: #fff;
-}
-
-page-search-location ion-input,
-page-search-location ion-input:-ms-input-placeholder,
-.search-location ion-input,
-.search-location ion-input:-ms-input-placeholder {
-  color: #fff;
-}
-
-page-search-location ion-input,
-page-search-location ion-input::placeholder,
-.search-location ion-input,
-.search-location ion-input::placeholder {
-  color: #fff;
-}
-
-page-account .card,
-.settings .card {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  overflow: hidden;
-}
-
 page-trip-detail ul.highlight,
 .trip-detail ul.highlight {
   padding-left: 0;
@@ -25176,6 +25128,26 @@ page-trip-detail .booking-form .form-bottom .pull-right,
   margin-left: auto;
 }
 
+page-home ion-list,
+.home ion-list {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+page-home ion-list ion-item,
+page-home ion-list .item:first-child,
+page-home ion-list .item:last-child,
+.home ion-list ion-item,
+.home ion-list .item:first-child,
+.home ion-list .item:last-child {
+  border: none;
+}
+
+page-home ion-list ion-datetime,
+.home ion-list ion-datetime {
+  padding-left: 0;
+}
+
 page-trips .card,
 .trips .card {
   border-radius: 1rem;
@@ -25207,4 +25179,32 @@ page-trips .trip .background .background-filter .align-bottom,
 page-trips .trip .background .background-filter .align-bottom h6,
 .trips .trip .background .background-filter .align-bottom h6 {
   margin-top: 0;
+}
+
+page-search-location ion-input,
+page-search-location ion-input::-webkit-input-placeholder,
+.search-location ion-input,
+.search-location ion-input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+page-search-location ion-input,
+page-search-location ion-input:-ms-input-placeholder,
+.search-location ion-input,
+.search-location ion-input:-ms-input-placeholder {
+  color: #fff;
+}
+
+page-search-location ion-input,
+page-search-location ion-input::placeholder,
+.search-location ion-input,
+.search-location ion-input::placeholder {
+  color: #fff;
+}
+
+page-account .card,
+.settings .card {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
