@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - "8.10"
-install:
-  - npm install -g firebase-tools
-  - npm upgrade -g firebase-tools
 script:
   - npm install
   - ionic build browser
