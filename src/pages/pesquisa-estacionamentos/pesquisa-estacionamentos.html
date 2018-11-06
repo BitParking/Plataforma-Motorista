@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="yellow">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong >BitParking</strong>
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar padding color="primary">
+    <p ion-text no-margin class="text-white">
+      <strong>{{qtdItensEncontrados}}</strong> estacionamentos encontrados!
+    </p>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="trips detail-bg">
+  <!--list of trips-->
+  <div class="trip card" *ngFor="let estacionamento of estacionamentos" tappable (click)="viewDetail(estacionamento)" margin-bottom>
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + 'https://www.ultraparkgru.com.br/dicas-de-viagem/wp-content/uploads/2017/03/saiba-escolher-o-estacionamento-certo-para-deixar-seu-carro.jpg' + ')'}">
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-left text-white" ion-text>{{ estacionamento.nome }}</h6>
+          <h6 class="pull-right text-white" ion-text>{{ estacionamento.bairro }}</h6>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="padding-sm yellow-bg">
+      <ion-icon name="ios-time" class="darkness"></ion-icon>
+      <span ion-text class="darkness"><strong>{{ estacionamento.horario }}</strong></span>
+      <span ion-text class="pull-right"><strong>{{ estacionamento.diasAtendimento }}</strong></span>
+    </div>
+  </div>
+</ion-content>

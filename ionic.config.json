@@ -1,0 +1,7 @@
+{
+  "name": "bitparking",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
