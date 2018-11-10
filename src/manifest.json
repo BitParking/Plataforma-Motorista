@@ -1,13 +1,13 @@
 {
-  "name": "ionic3-start-theme",
-  "short_name": "ionic3-start-theme",
+  "name": "Bitparking",
+  "short_name": "BitParking",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "assets/img/logo.png",
+    "src": "assets/img/logotipo.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "background_color": "#0039a2",
-  "theme_color": "#0039a2"
+  "background_color": "#f6ff05",
+  "theme_color": "#f6ff05"
 }
