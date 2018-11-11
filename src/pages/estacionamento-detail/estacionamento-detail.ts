@@ -1,6 +1,5 @@
 import {Component} from "@angular/core";
 import {NavController, NavParams} from "ionic-angular";
-import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
 import { Estacionamento } from "../../models/Estacionamento";
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 

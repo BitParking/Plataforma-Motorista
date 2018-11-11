@@ -18,14 +18,11 @@ import {WeatherProvider} from "../services/weather";
 import {MyApp} from "./app.component";
 
 import {SettingsPage} from "../pages/settings/settings";
-import {CheckoutTripPage} from "../pages/checkout-trip/checkout-trip";
 import {HomePage} from "../pages/home/home";
 import {LoginPage} from "../pages/login/login";
 import {NotificationsPage} from "../pages/notifications/notifications";
 import {RegisterPage} from "../pages/register/register";
-import {SearchLocationPage} from "../pages/search-location/search-location";
 import {EstacionamentoDetailPage} from "../pages/estacionamento-detail/estacionamento-detail";
-import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { EstacionamentoClient } from "../clients/EstacionamentoClient";
 import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesquisa-estacionamentos';
 import { BrMaskerModule } from 'brmasker-ionic-3';
@@ -33,6 +30,7 @@ import { UserClient } from "../clients/UserClient";
 import { UserService } from "../services/UserService";
 import { MotoristaClient } from '../clients/MotoristaClient';
 import { MotoristaService } from "../services/MotoristaService"; 
+import { CarroPage } from '../pages/carro-registro/carro';
 
 
 // import services
@@ -46,13 +44,11 @@ import { MotoristaService } from "../services/MotoristaService";
   declarations: [
     MyApp,
     SettingsPage,
-    CheckoutTripPage,
     HomePage,
     LoginPage,
-    LocalWeatherPage,
+    CarroPage,
     NotificationsPage,
     RegisterPage,
-    SearchLocationPage,
     EstacionamentoDetailPage,
     PesquisaEstacionamento
   ],
@@ -75,13 +71,11 @@ import { MotoristaService } from "../services/MotoristaService";
   entryComponents: [
     MyApp,
     SettingsPage,
-    CheckoutTripPage,
     HomePage,
     LoginPage,
-    LocalWeatherPage,
+    CarroPage,
     NotificationsPage,
     RegisterPage,
-    SearchLocationPage,
     EstacionamentoDetailPage,
     PesquisaEstacionamento
   ],

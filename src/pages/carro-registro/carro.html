@@ -1,0 +1,41 @@
+<!-- -->
+<ion-content padding class="carro">
+<img class="carro img" src="../assets/img/key.png">
+<div><br></div>
+  <b>Olá bem vindo a BitParking, antes de continuarmos por favor cadastre um veículo na área abaixo:</b>
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item class="carro">
+        <ion-label class="carro label" floating>
+          <ion-icon name="md-browsers" item-start class="carro label"></ion-icon>
+          Placa
+        </ion-label>
+        <ion-input class="carro" [(ngModel)]="newCar.placa" (ngModelChange)="newCar.placa = $event.toLocaleUpperCase()" [brmasker]="{mask:'000-0000', len:8}" name="placa" class="carro label" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="carro">
+        <ion-label class="carro label" floating>
+          <ion-icon name="md-color-palette" item-start class="carro label"></ion-icon>
+          Cor
+        </ion-label>
+        <ion-input class="carro" [(ngModel)]="newCar.cor" name="cor" class="carro label" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="carro">
+        <ion-label class="carro label" floating>
+          <ion-icon name="ios-car" item-start class="carro label"></ion-icon>
+          Marca
+        </ion-label>
+        <ion-input class="carro" [(ngModel)]="newCar.modelo" name="modelo" class="carro label" type="text"></ion-input>
+      </ion-item>
+
+    </form>
+    <div><br><br></div>
+
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="entrar(newCar)">
+        <ion-icon name="log-in"></ion-icon>
+        Cadastrar Meu Veículo
+      </button>
+    </div>
+</ion-content>

@@ -7,7 +7,6 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { PesquisaEstacionamento } from "../pages/pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { LoginPage } from "../pages/login/login";
-import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
 export interface MenuItem {
     title: string;
