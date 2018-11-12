@@ -7,6 +7,8 @@ import { User } from '../../models/User';
 import { UserService } from '../../services/UserService';
 import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { MotoristaService } from "../../services/MotoristaService";
+import { CarroPage } from "../carro-registro/carro";
+import { Keyboard } from "@ionic-native/keyboard";
  
 @Component({
   selector: 'page-register',
@@ -15,11 +17,11 @@ import { MotoristaService } from "../../services/MotoristaService";
 export class RegisterPage {
   public motorista:Motorista
   public user:User
- 
- 
+
   constructor(public nav: NavController, public userService:UserService,
-              public motoristaService:MotoristaService) {
-    this.motorista = new Motorista("",null,"","","",[]);
+              public motoristaService:MotoristaService,public keyboard: Keyboard) {
+    keyboard.disableScroll(false);
+    this.motorista = new Motorista("","",null,"","","",[]);
     this.user = new User("","",true,"","","");
   }
  
@@ -27,8 +29,10 @@ export class RegisterPage {
   register() {
     this.userService.create(this.user).then((newUser)=>{
       this.motorista.setEmail(this.user.getEmail());
-      this.motoristaService.create(this.motorista,newUser.getToken()).then(()=>{
-        this.nav.setRoot(PesquisaEstacionamento, {userLogado: newUser});
+      this.motoristaService.create(this.motorista,newUser.getToken()).then((result)=>{
+        const resultNormalized = result.name.split(/s+\//);
+        this.motorista.setUid(resultNormalized[4]);
+        this.nav.setRoot(CarroPage, {userLogado: newUser,motoristaCadastrado:this.motorista});
       });
     });
   }

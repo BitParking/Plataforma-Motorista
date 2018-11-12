@@ -3,6 +3,7 @@ import { Carro } from "./Carro";
 export class Motorista {
 
   constructor(
+    private uid:string,
     private nome: string,
     private cnh: number,
     private cpf:string,
@@ -10,6 +11,14 @@ export class Motorista {
     private email: string,
     private carros: Array<Carro>
   ) {}
+
+  public getUid():string{
+    return this.uid;
+  }
+
+  public setUid(uid:string){
+    this.uid = uid;
+  }
 
   public getNome(): string {
     return this.nome;

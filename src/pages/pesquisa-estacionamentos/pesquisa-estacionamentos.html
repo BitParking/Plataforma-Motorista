@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="yellow">
-    <button ion-button menuToggle>
+    <button ion-button menuToggle (click)="showMenu()">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
@@ -13,6 +13,7 @@
     </p>
   </ion-toolbar>
 </ion-header>
+<page-login></page-login>
 
 
 <ion-content padding class="trips detail-bg">

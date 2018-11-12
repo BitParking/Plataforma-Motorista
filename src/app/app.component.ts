@@ -1,13 +1,13 @@
 import { Component, ViewChild } from "@angular/core";
-import { Platform, Nav } from "ionic-angular";
+import { Platform, Nav, Events } from 'ionic-angular';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 
-import { PesquisaEstacionamento } from "../pages/pesquisa-estacionamentos/pesquisa-estacionamentos";
+import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesquisa-estacionamentos';
 import { LoginPage } from "../pages/login/login";
-import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
 export interface MenuItem {
     title: string;
@@ -26,18 +26,23 @@ export class MyApp {
 
   appMenuItems: Array<MenuItem>;
 
+  public nomeMotorista:string;
+
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public keyboard: Keyboard
+    public keyboard: Keyboard,
+    public events: Events
   ) {
     this.initializeApp();
-
     this.appMenuItems = [
       {title: 'Pesquisar', component: PesquisaEstacionamento, icon: 'search'},
       {title: 'Minhas Reservas', component: PesquisaEstacionamento, icon: 'clock'}
     ];
+    events.subscribe('user:logado',(emailUser)=>{
+      this.nomeMotorista = emailUser;
+    });
   }
 
   initializeApp() {
