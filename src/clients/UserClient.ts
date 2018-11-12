@@ -41,7 +41,7 @@ export class UserClient {
           "refresh_token": refreshToken
       }
  
-      this.http.post(url, refreshToken)
+      this.http.post(url, requestRefreshToken)
         .subscribe((result: any) => {
           resolve(result.json());
         },

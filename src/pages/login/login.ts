@@ -1,9 +1,11 @@
 import {Component} from "@angular/core";
-import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
+import {NavController, AlertController, ToastController, MenuController, Events} from "ionic-angular";
 import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import {RegisterPage} from "../register/register";
 import { User } from "../../models/User";
 import { UserService } from "../../services/UserService";
+import { MotoristaService } from '../../services/MotoristaService';
+import { Motorista } from "../../models/Motorista";
 
 @Component({
   selector: 'page-login',
@@ -15,7 +17,8 @@ export class LoginPage {
   public errorMessage:string;
  
   constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController,
-              public toastCtrl: ToastController, public userService:UserService) {
+              public toastCtrl: ToastController, public userService:UserService,
+              public events:Events, public motoristaService:MotoristaService) {
     this.errorMessage = "";
     this.userAuth = new User("","",true,"","","");
     this.menu.swipeEnable(false);
@@ -29,7 +32,10 @@ export class LoginPage {
   // login and go to home page
   login() {
     this.userService.login(this.userAuth).then(user => {
-      this.nav.setRoot(PesquisaEstacionamento, {userLogado: user});
+      this.motoristaService.searchByEmail(user.getEmail(),user.getToken()).then((motorista:Motorista)=>{
+        this.events.publish('user:logado',motorista.getNome());
+        this.nav.setRoot(PesquisaEstacionamento, {userLogado: user});
+      });
     })
     .catch((e:Error) =>{
       this.errorMessage = e.message;
