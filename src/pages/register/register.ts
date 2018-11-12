@@ -30,7 +30,7 @@ export class RegisterPage {
     this.userService.create(this.user).then((newUser)=>{
       this.motorista.setEmail(this.user.getEmail());
       this.motoristaService.create(this.motorista,newUser.getToken()).then((result)=>{
-        this.events.publish('user:logado',this.motorista.getNome());  
+        this.events.publish('user:logado',result.fields.nome.stringValue);  
         const resultNormalized = result.name.split(/s+\//);
         this.motorista.setUid(resultNormalized[4]);
         this.nav.setRoot(CarroPage, {userLogado: newUser,motoristaCadastrado:this.motorista});
