@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, Events} from "ionic-angular";
 import {LoginPage} from "../login/login";
 import {HomePage} from "../home/home";
 import { Motorista } from '../../models/Motorista';
@@ -19,7 +19,7 @@ export class RegisterPage {
   public user:User
 
   constructor(public nav: NavController, public userService:UserService,
-              public motoristaService:MotoristaService,public keyboard: Keyboard) {
+              public motoristaService:MotoristaService,public keyboard: Keyboard,public events:Events) {
     keyboard.disableScroll(false);
     this.motorista = new Motorista("","",null,"","","",[]);
     this.user = new User("","",true,"","","");
@@ -30,6 +30,7 @@ export class RegisterPage {
     this.userService.create(this.user).then((newUser)=>{
       this.motorista.setEmail(this.user.getEmail());
       this.motoristaService.create(this.motorista,newUser.getToken()).then((result)=>{
+        this.events.publish('user:logado',this.motorista.getNome());  
         const resultNormalized = result.name.split(/s+\//);
         this.motorista.setUid(resultNormalized[4]);
         this.nav.setRoot(CarroPage, {userLogado: newUser,motoristaCadastrado:this.motorista});
