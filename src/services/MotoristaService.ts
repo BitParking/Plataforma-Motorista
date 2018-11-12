@@ -5,6 +5,7 @@ import { MotoristaClient } from '../clients/MotoristaClient';
 @Injectable()
 export class MotoristaService {
   private motoristaEntity:any;
+  private selectQuery:any;
  
   constructor(public motoristaClient: MotoristaClient) {
   }
@@ -12,6 +13,31 @@ export class MotoristaService {
   public create(motorista:Motorista,token:string):Promise<any> {
     this.buildMotoristaEntity(motorista);
     return this.motoristaClient.insert(this.motoristaEntity,token);
+  }
+
+  public searchByEmail(email:string,token:string):Promise<Motorista>{
+    return new Promise((resolve) => {
+      this.buildSelectQueryByEmail(email);
+       this.motoristaClient.findByEmail(this.selectQuery,token).then((motoristaResponse)=>{
+           resolve(this.buildMotorista(motoristaResponse));
+       });
+    });
+  }
+
+  private buildSelectQueryByEmail(email:string){
+      this.selectQuery = {
+        "structuredQuery": {
+            "select": {},
+                "from": [{"collectionId": "motoristas"}],
+                        "where" : {
+                            "fieldFilter" : { 
+                                "field": {"fieldPath": "email"}, 
+                                "op":"EQUAL", 
+                                "value": {"stringValue": email}
+                            }
+                        }
+                }
+      }
   }
  
   private buildMotoristaEntity(motorista:Motorista):void{
@@ -35,5 +61,12 @@ export class MotoristaService {
           }
       }
     }
+  }
+
+  private buildMotorista(motoristaEntity:any):Motorista{
+    const resultNormalized = motoristaEntity.name.split(/s+\//);
+    return new Motorista(resultNormalized[4],motoristaEntity.fields.nome.stringValue,
+        motoristaEntity.fields.cnh.integerValue,motoristaEntity.fields.cpf.integerValue,
+        motoristaEntity.fields.telefone.stringValue,motoristaEntity.fields.email.stringValue,[]);
   }
 }

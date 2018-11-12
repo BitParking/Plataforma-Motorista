@@ -4,7 +4,6 @@ import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estac
 import {RegisterPage} from "../register/register";
 import { User } from "../../models/User";
 import { UserService } from "../../services/UserService";
-import { CarroPage } from '../carro-registro/carro';
 
 @Component({
   selector: 'page-login',
@@ -29,15 +28,13 @@ export class LoginPage {
 
   // login and go to home page
   login() {
-    this.nav.setRoot(CarroPage);
-    /*
     this.userService.login(this.userAuth).then(user => {
       this.nav.setRoot(PesquisaEstacionamento, {userLogado: user});
     })
     .catch((e:Error) =>{
       this.errorMessage = e.message;
       this.showErrorMessage();
-    });*/
+    });
   }
 
   forgotPass() {

@@ -8,6 +8,7 @@ import { UserService } from '../../services/UserService';
 import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { MotoristaService } from "../../services/MotoristaService";
 import { CarroPage } from "../carro-registro/carro";
+import { Keyboard } from "@ionic-native/keyboard";
  
 @Component({
   selector: 'page-register',
@@ -16,10 +17,10 @@ import { CarroPage } from "../carro-registro/carro";
 export class RegisterPage {
   public motorista:Motorista
   public user:User
- 
- 
+
   constructor(public nav: NavController, public userService:UserService,
-              public motoristaService:MotoristaService) {
+              public motoristaService:MotoristaService,public keyboard: Keyboard) {
+    keyboard.disableScroll(false);
     this.motorista = new Motorista("","",null,"","","",[]);
     this.user = new User("","",true,"","","");
   }

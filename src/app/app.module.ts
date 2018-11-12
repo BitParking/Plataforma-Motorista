@@ -31,6 +31,8 @@ import { UserService } from "../services/UserService";
 import { MotoristaClient } from '../clients/MotoristaClient';
 import { MotoristaService } from "../services/MotoristaService"; 
 import { CarroPage } from '../pages/carro-registro/carro';
+import { CarroService } from "../services/CarroService";
+import { CarroClient } from "../clients/CarroClient";
 
 
 // import services
@@ -89,7 +91,9 @@ import { CarroPage } from '../pages/carro-registro/carro';
     UserClient,
     UserService,
     MotoristaClient,
-    MotoristaService, 
+    MotoristaService,
+    CarroService,
+    CarroClient, 
     WeatherProvider,
     LaunchNavigator,
     InAppBrowser
