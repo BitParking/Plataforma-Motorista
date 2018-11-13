@@ -5,7 +5,6 @@ import {HomePage} from "../home/home";
 import { Motorista } from '../../models/Motorista';
 import { User } from '../../models/User';
 import { UserService } from '../../services/UserService';
-import {PesquisaEstacionamento} from "../pesquisa-estacionamentos/pesquisa-estacionamentos";
 import { MotoristaService } from "../../services/MotoristaService";
 import { CarroPage } from "../carro-registro/carro";
 import { Keyboard } from "@ionic-native/keyboard";

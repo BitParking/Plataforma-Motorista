@@ -11,7 +11,8 @@ export class Estacionamento {
     private estado: string,
     private horario: string,
     private diasAtendimento: string,
-    private qtdVagas:number
+    private qtdVagas:number,
+    private garagista:string
   ) {}
 
   public getPath(): string {
@@ -96,5 +97,13 @@ export class Estacionamento {
 
   public setqtdVagas(qtdVagas: number) {
     this.qtdVagas = qtdVagas;
+  }
+
+  public getGaragista(): string {
+    return this.garagista;
+  }
+
+  public setGaragista(garagista: string) {
+    this.garagista = garagista;
   }
 }
