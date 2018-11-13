@@ -22,6 +22,7 @@
     "@firebase/auth": "^0.7.8",
     "@ionic-native/core": "3.12.1",
     "@ionic-native/device": "^4.2.1",
+    "@ionic-native/geolocation": "^4.17.0",
     "@ionic-native/in-app-browser": "^4.14.0",
     "@ionic-native/keyboard": "^4.1.0",
     "@ionic-native/launch-navigator": "^4.12.2",
