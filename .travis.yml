@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "8.10"
 script:
-  - npm install
   - ionic build browser
   - sudo npm i -g firebase-tools
   - sudo npm i -g firebase
