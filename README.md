@@ -6,3 +6,7 @@ Cliente do sistema de estacionamento.
 TechStack:
 
 * Ionic 4.0
+* Typescript
+* Firebase Authentication
+* Firebase Firestore(Database NoSql)
+* Firebase Analytics
