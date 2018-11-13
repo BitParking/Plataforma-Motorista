@@ -5,8 +5,6 @@ node_js:
   - "8.10"
 script:
   - ionic build browser
-  - sudo npm i -g firebase-tools
-  - sudo npm i -g firebase
   - echo "Realizando deploy aplicacao no firebase"
 after_success:
   - firebase use --token $FIREBASE_TOKEN bitparking-tcc
