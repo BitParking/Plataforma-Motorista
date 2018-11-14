@@ -28,10 +28,12 @@ export class RegisterPage {
   register() {
     this.userService.create(this.user).then((newUser)=>{
       this.motorista.setEmail(this.user.getEmail());
-      this.motoristaService.create(this.motorista,newUser.getToken()).then((result)=>{
-        this.events.publish('user:logado',result.fields.nome.stringValue);  
+      this.motoristaService.create(this.motorista,newUser.getToken()).then((result)=>{ 
         const resultNormalized = result.name.split(/s+\//);
         this.motorista.setUid(resultNormalized[4]);
+        this.motorista.setNome(result.fields.nome.stringValue)
+        this.events.publish('user:logado',this.motorista); 
+        this.events.publish('motorista:logado',this.motorista);
         this.nav.setRoot(CarroPage, {userLogado: newUser,motoristaCadastrado:this.motorista});
       });
     });

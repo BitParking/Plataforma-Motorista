@@ -32,13 +32,13 @@
 
   <!--description-->
   <div class="border-bottom" padding>
-    <span ion-text color="#000000" class="bold">VOCÊ SERÁ ATENDIDO PELO GARAGISTA</span>
+    <span ion-text color="#000000" class="bold">VOCÊ SERÁ ATENDIDO PELO(A) GARAGISTA</span>
     <ion-list>
       <ion-item>
         <ion-avatar item-start>
           <img src="{{avatarImg}}">
         </ion-avatar>
-        <h2>Adalberto</h2>
+        <h2>{{estacionamento.garagista}}</h2>
       </ion-item>
     </ion-list>
   </div>
@@ -47,6 +47,11 @@
   <div class="border-bottom" padding>
     <span ion-text color="#000000" class="bold">LOCALIZAÇÃO</span>
     <p ion-text>{{ estacionamento.endereco }} - {{estacionamento.cidade}} - {{estacionamento.estado}}</p>
+  </div>
+
+  <div class="border-bottom" padding>
+    <span ion-text color="#000000" class="bold">FORMAS DE PAGAMENTO</span>
+    <p ion-text><ion-icon name="md-cash" item-start color="green"></ion-icon><b> {{ estacionamento.meioPagamento }} </b></p>
   </div>
 
     <!--booking form-->
@@ -58,7 +63,7 @@
         <ion-grid class="filters" no-padding margin-top>
           <ion-row>
             <ion-col class="adult" width-70>
-              <span ion-text color="primary"><strong>Minutos:</strong></span>
+              <span ion-text color="purple"><strong>Minutos:</strong></span>
             </ion-col>
             <ion-col width-10 text-center>
               <ion-icon name="remove-circle" class="text-2x" tappable (click)="diminuiReserva()" [hidden]="reservas < 2"
@@ -68,6 +73,14 @@
             <ion-col width-10 text-center>
               <ion-icon name="add-circle" class="text-2x" tappable (click)="aumentaReserva()" color="secondary"></ion-icon>
             </ion-col>
+          </ion-row>
+          <ion-row>
+            <span ion-text color="purple"><strong>Valor por Minuto:</strong></span>
+            <ion-col width-10 text-center>{{ estacionamento.precoMinuto | currency:"BRL":true:"1.2" }}</ion-col>
+          </ion-row><br>_____________________________________________________
+          <ion-row>
+            <span ion-text color="purple"><strong>Valor Total:</strong></span>
+            <ion-col style="margin-left:6%" text-center>{{ valorTotal | currency:"BRL":true:"1.2" }}</ion-col>
           </ion-row>
         </ion-grid>
       </div>

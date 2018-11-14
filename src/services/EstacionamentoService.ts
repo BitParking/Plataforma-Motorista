@@ -25,7 +25,8 @@ export class EstacionamentoService {
     return new Estacionamento(documento.name,documento.fields.nome.stringValue,documento.fields.cnpj.stringValue,
       documento.fields.telefone.stringValue,documento.fields.endereco.stringValue,documento.fields.bairro.stringValue,
       documento.fields.cidade.stringValue,documento.fields.estado.stringValue,documento.fields.horario.stringValue,
-      documento.fields.diasAtendimento.stringValue,documento.fields.qtdVagas.integerValue,documento.fields.garagista.stringValue);
+      documento.fields.diasAtendimento.stringValue,documento.fields.qtdVagas.integerValue,
+      documento.fields.garagista.stringValue,documento.fields.precoMinuto.doubleValue,documento.fields.meioPagamento.stringValue);
   }
 
   getItem(id) {

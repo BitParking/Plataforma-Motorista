@@ -12,7 +12,9 @@ export class Estacionamento {
     private horario: string,
     private diasAtendimento: string,
     private qtdVagas:number,
-    private garagista:string
+    private garagista:string,
+    private precoMinuto:number,
+    private meioPagamento:string
   ) {}
 
   public getPath(): string {
@@ -105,5 +107,21 @@ export class Estacionamento {
 
   public setGaragista(garagista: string) {
     this.garagista = garagista;
+  }
+
+  public getPrecoMinuto(): number {
+    return this.precoMinuto;
+  }
+
+  public setPrecoMinuto(precoMinuto: number) {
+    this.precoMinuto = precoMinuto;
+  }
+
+  public getMeioPagamento(): string {
+    return this.meioPagamento;
+  }
+
+  public setMeioPagamento(meioPagamento: string) {
+    this.meioPagamento = meioPagamento;
   }
 }

@@ -8,6 +8,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { PesquisaEstacionamento } from '../pages/pesquisa-estacionamentos/pesquisa-estacionamentos';
 import { LoginPage } from "../pages/login/login";
+import { Motorista } from '../models/Motorista';
 
 export interface MenuItem {
     title: string;
@@ -40,8 +41,8 @@ export class MyApp {
       {title: 'Pesquisar', component: PesquisaEstacionamento, icon: 'search'},
       {title: 'Minhas Reservas', component: PesquisaEstacionamento, icon: 'clock'}
     ];
-    events.subscribe('user:logado',(emailUser)=>{
-      this.nomeMotorista = emailUser;
+    events.subscribe('user:logado',(motorista:Motorista)=>{
+      this.nomeMotorista = motorista.getNome();
     });
   }
 

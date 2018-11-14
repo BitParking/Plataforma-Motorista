@@ -34,6 +34,8 @@ import { CarroPage } from '../pages/carro-registro/carro';
 import { CarroService } from "../services/CarroService";
 import { CarroClient } from "../clients/CarroClient";
 import { Geolocation } from "@ionic-native/geolocation";
+import { ReservaService } from "../services/ReservaService";
+import { ReservaClient } from "../clients/ReservaClient";
 
 
 // import services
@@ -94,7 +96,9 @@ import { Geolocation } from "@ionic-native/geolocation";
     MotoristaClient,
     MotoristaService,
     CarroService,
-    CarroClient, 
+    CarroClient,
+    ReservaService,
+    ReservaClient, 
     WeatherProvider,
     LaunchNavigator,
     InAppBrowser,
