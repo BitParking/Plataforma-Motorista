@@ -5,6 +5,8 @@ import {EstacionamentoDetailPage} from "../estacionamento-detail/estacionamento-
 import { Estacionamento } from "../../models/Estacionamento";
 import { User } from "../../models/User";
 import { UserService } from '../../services/UserService';
+import { MotoristaService } from '../../services/MotoristaService';
+import { Motorista } from "../../models/Motorista";
 
 
 @Component({
@@ -19,7 +21,7 @@ export class PesquisaEstacionamento {
   public img:string = "https://firebasestorage.googleapis.com/v0/b/bitparking-tcc.appspot.com/o/logotipo.png?alt=media&token=ffd2e1ed-deca-41ad-9c1e-85a967e6e1a1";
  
   constructor(public nav: NavController, public estacionamentoService: EstacionamentoService,
-              public navParams: NavParams, public userService:UserService) {
+              public navParams: NavParams, public userService:UserService,public motoristaService:MotoristaService) {
     this.userLogado = navParams.get("userLogado");
     this.qtdItensEncontrados = 0;
     this.estacionamentos = [];
@@ -34,6 +36,10 @@ export class PesquisaEstacionamento {
   
   // view parking detail
   viewDetail(estacionamento:Estacionamento) {
-    this.nav.push(EstacionamentoDetailPage, {estacionamentoSelecionado: estacionamento});
+    this.motoristaService.searchByEmail(this.userLogado.getEmail(),this.userLogado.getToken()).then((motorista:Motorista)=>{
+      this.nav.push(EstacionamentoDetailPage, { estacionamentoSelecionado: estacionamento, 
+                                                usuarioLogado: this.userLogado,
+                                                motoristaLogado:motorista });      
+    })
   }
 }

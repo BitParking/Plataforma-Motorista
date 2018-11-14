@@ -33,7 +33,8 @@ export class LoginPage {
   login() {
     this.userService.login(this.userAuth).then(user => {
       this.motoristaService.searchByEmail(user.getEmail(),user.getToken()).then((motorista:Motorista)=>{
-        this.events.publish('user:logado',motorista.getNome());
+        this.events.publish('user:logado',motorista);
+        this.events.publish('motorista:logado',motorista)
         this.nav.setRoot(PesquisaEstacionamento, {userLogado: user});
       });
     })
